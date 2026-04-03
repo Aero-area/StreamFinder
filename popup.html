@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>StreamFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header-brand">
+          <div class="brand-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 10l4.553-2.277A1 1 0 0121 8.649v6.702a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="brand-name">StreamFinder</h1>
+            <p id="pageTitle" class="page-subtitle">Scanning current tab…</p>
+          </div>
+        </div>
+        <button id="refreshBtn" class="btn-primary" type="button">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4v5h.582M20 20v-5h-.581M4.582 9A8.003 8.003 0 0119.419 15M19.419 15A8.003 8.003 0 014.582 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Scan
+        </button>
+      </header>
+
+      <!-- Toolbar: search + stats -->
+      <section class="toolbar">
+        <div class="search-wrap">
+          <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+            <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input id="searchInput" class="search" type="search" placeholder="Filter by title, host or URL…" />
+        </div>
+        <div class="stats-row">
+          <span id="statTotal" class="stat-chip">0 results</span>
+          <span class="stat-divider">·</span>
+          <span id="statDirect" class="stat-chip stat-good">0 direct</span>
+          <span class="stat-divider">·</span>
+          <span id="statStream" class="stat-chip stat-warn">0 streams</span>
+        </div>
+      </section>
+
+      <!-- Status bar -->
+      <p id="status" class="status-bar">Scanning…</p>
+
+      <!-- Results list -->
+      <ul id="mediaList" class="media-list"></ul>
+
+      <!-- Footer note -->
+      <footer class="app-footer">
+        Only download content you have permission to save. YouTube is blocked.
+      </footer>
+
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
